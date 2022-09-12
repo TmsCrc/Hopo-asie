@@ -9,7 +9,7 @@ request({ url: url, json: true }, (error, response) => {
     } else if (response.body.error) {
         callback("To si si z jakej rici vytáhol? Šak to nevím nájst!", undefined)
     } else {
-        callback(undefined, response.body.current.weather_descriptions[0] + ". Ščuleky je " + response.body.current.temperature + " stupnóf. " + "Cícíš to jak keby bolo " + response.body.current.feelslike + " stupnóf.")
+        callback(undefined, response.body.current.weather_descriptions[0] + ". Ščuleky je tam " + response.body.current.temperature + " stupnóf. " + "Cícíš to jak keby bolo " + response.body.current.feelslike + " stupnóf.")
     }
 })
 }
