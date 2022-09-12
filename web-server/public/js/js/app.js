@@ -1,0 +1,1 @@
+console.log("klient je naloduvany")
