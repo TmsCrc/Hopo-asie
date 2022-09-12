@@ -7,7 +7,7 @@ const geocode = (address, callback) => {
         if (error) {
             callback("Nemáš net prasnica!", undefined)
         } else if (body.features.lenght === 0) {
-            callback("Si si z riti takú adresu cépečkársku pjatčovinu vyťáhol?", undefined)
+            callback("Si si z riti takú cépečkársku pjatčovinu vytáhól?", undefined)
         } else {
             callback(undefined, {
                 latitude: body.features[0].center[1],
