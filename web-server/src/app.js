@@ -2,6 +2,8 @@ const path = require("path")
 const express = require("express")
 const hbs = require("hbs")
 const { response } = require("express")
+const geocode = require ("./utils/geocode")
+const forecast = require ("./utils/forecast.js")
 
 const app = express()
 
@@ -20,7 +22,7 @@ app.use(express.static(publicDirectoryPath))
 
 app.get("", (req, res) => {
     res.render("index", {
-        title: "Pošťasie",
+        title: "Počasie",
         name: "doTLA"
     })
 })
@@ -47,11 +49,45 @@ app.get("/about", (req, res) => {
 })
 
 app.get("/weather", (req, res) => {
+    if (!req.query.address) {
+        return res.send ({
+            error: "No ja z hlavy neviem, kde chceš vedieť aké je počasie ty vreco"
+        })
+    }
+
+    geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {
+        if (error) {
+            return res.send({ error })
+        } 
+    
+        forecast(latitude, longitude, (error, forecastData) => {
+            if (error) {
+                return res.send({ error })
+            }
+
+            res.send ({
+                forecast: forecastData,
+                location,
+                address: req.query.address
+            })
+          })
+    }) 
+})
+
+app.get("/products", (req, res) => {
+    if (!req.query.search) {
+        return res.send({
+            error: "Musíš zadať čo chceš hladať"
+        })
+    } 
+    
+    console.log(req.query.search)
     res.send({
-        forecast: "Svící",
-        location: "Šadze"
+        product: []
     })
 })
+
+
 
 app.get("/help/*", (req, res) => {
     res.render("helpme", {
