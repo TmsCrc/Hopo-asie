@@ -9,7 +9,7 @@ request({ url, json: true }, (error, { body }) => {
     } else if (body.error) {
         callback("To si si z jakej rici vytáhol? Šak to nevím nájst!", undefined)
     } else {
-        callback(undefined, body.current.weather_descriptions[0] + ". Momentálne máme " + body.current.temperature + " stupňov. " + "Pocitovo máme " + body.current.feelslike + " stupňov." + " Vlhkosť vzduchu je: " + body.current.humidity + " %." + " , rýchlosť vetra je: " + body.current.wind_speed + " km/h " + " a atmosferický tlak " + body.current.pressure + " hPa." + " UV index na dnes má hodnotu: " + body.current.uv_index + ".")
+        callback(undefined, body.current.weather_descriptions[0] + ". Momentálne máme " + body.current.temperature + " °C, " + "pocitovo máme " + body.current.feelslike + " °C." + " Vlhkosť vzduchu je: " + body.current.humidity + " %" + " , rýchlosť vetra je: " + body.current.wind_speed + " km/h " + " a atmosferický tlak " + body.current.pressure + " hPa." + " UV index na dnes má hodnotu: " + body.current.uv_index + ".")
     }
 })
 }
