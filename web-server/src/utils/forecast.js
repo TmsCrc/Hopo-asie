@@ -13,4 +13,5 @@ request({ url, json: true }, (error, { body }) => {
     }
 })
 }
+
 module.exports = forecast
