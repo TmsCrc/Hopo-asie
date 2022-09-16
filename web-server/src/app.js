@@ -29,8 +29,8 @@ app.get("", (req, res) => {
 
 app.get("/help", (req, res) => {
     res.render("Help", {
-        title: "Je to v riti",
-        name: "a poriadne hlboko"
+        title: "Pomoc nepríde",
+        name: "Bolo mi potešením spoznať Vás, ZBohom!"
         })
 })
 
