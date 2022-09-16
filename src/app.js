@@ -44,7 +44,7 @@ app.get("/help/me", (req, res) => {
 
 app.get("/about", (req, res) => {
     res.render("about", {
-        title: "Iný obrázok nemám",
+        title: "O čom",
         name: "doTLA"
     })
 })
