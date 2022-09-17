@@ -92,9 +92,9 @@ app.get("/products", (req, res) => {
 
 app.get("/help/*", (req, res) => {
     res.render("helpme", {
-        title: "Pomoc sa nenašla",
-        name: "ser na to a zomri",
-        chybnaSprava: "Všetko biele (Ján Smrek)  Až umriem raz, nech je to v máji, keď kvitne biely orgován. Bo dnes som videl veniec- krásny!- niesli ho, dvere dokorán, a mňa ten veniec očaroval: vznešený biely velikán, v ňom orgován len samý biely a pri ňom biely tulipán!"
+        title: "Pomoc",
+        name: "keep calm and zomri",
+        chybnaSprava: "Ak ste natrafili na chybu, napíšte mi, alebo sa obráťte na udemy kurz: The Complete Node.js Developer course 3rd Edition "
     })
 })
 
